@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turkey</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?&callback=initMap&libraries=&v=weekly" defer></script>
+    <link rel="icon" type="image/png" href="img/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+    <script defer src="/your-path-to-fontawesome/js/brands.js"></script>
+    <script defer src="/your-path-to-fontawesome/js/solid.js"></script>
+    <script defer src="/your-path-to-fontawesome/js/fontawesome.js"></script>
+
+<link rel="shortcut icon" href="favicon.ico"></head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__right">
+                    <a href="./index.html">
+                        <div class="header__title">Морган</div>
+                    </a>
+                    <div class="header__text">туристическое агенство</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="state">
+            <div class="container">
+                <div class="state__turkey__img state__size">
+                    <div class="state__title"><em>Turkey</em></div>
+                </div>
+                <div class="state__info">
+                    <div class="state__box">
+                        <h4>Виза</h4>
+                        <span>$25 по прилёту</span>
+                    </div>
+                    <div class="state__box">
+                        <h4>Столица</h4>
+                        <span>анкара</span>
+                    </div>
+                    <div class="state__box">
+                        <h4>Валюта</h4>
+                        <span>турецкая валюта</span>
+                    </div>
+                </div>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion__title">Средняя температура</div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Анталия
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col">янв</th>
+                                            <th scope="col">фев</th>
+                                            <th scope="col">мар</th>
+                                            <th scope="col">апр</th>
+                                            <th scope="col">май</th>
+                                            <th scope="col">июн</th>
+                                            <th scope="col">июл</th>
+                                            <th scope="col">авг</th>
+                                            <th scope="col">сен</th>
+                                            <th scope="col">окт</th>
+                                            <th scope="col">ноя</th>
+                                            <th scope="col">дек</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">днём</th>
+                                            <td>+14</td>
+                                            <td>+14</td>
+                                            <td>+17</td>
+                                            <td>+21</td>
+                                            <td>+25</td>
+                                            <td>+30</td>
+                                            <td>+33</td>
+                                            <td>+33</td>
+                                            <td>+31</td>
+                                            <td>+26</td>
+                                            <td>+20</td>
+                                            <td>+15</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">ночью</th>
+                                            <td>+5</td>
+                                            <td>+5</td>
+                                            <td>+7</td>
+                                            <td>+10</td>
+                                            <td>+14</td>
+                                            <td>+18</td>
+                                            <td>+21</td>
+                                            <td>+21</td>
+                                            <td>+18</td>
+                                            <td>+13</td>
+                                            <td>+10</td>
+                                            <td>+6</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">вода</th>
+                                            <td>+18</td>
+                                            <td>+17</td>
+                                            <td>+17</td>
+                                            <td>+18</td>
+                                            <td>+20</td>
+                                            <td>+23</td>
+                                            <td>+26</td>
+                                            <td>+27</td>
+                                            <td>+26</td>
+                                            <td>+25</td>
+                                            <td>+23</td>
+                                            <td>+20</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Бодрум
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col">янв</th>
+                                            <th scope="col">фев</th>
+                                            <th scope="col">мар</th>
+                                            <th scope="col">апр</th>
+                                            <th scope="col">май</th>
+                                            <th scope="col">июн</th>
+                                            <th scope="col">июл</th>
+                                            <th scope="col">авг</th>
+                                            <th scope="col">сен</th>
+                                            <th scope="col">окт</th>
+                                            <th scope="col">ноя</th>
+                                            <th scope="col">дек</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">днём</th>
+                                            <td>+14</td>
+                                            <td>+14</td>
+                                            <td>+17</td>
+                                            <td>+21</td>
+                                            <td>+25</td>
+                                            <td>+30</td>
+                                            <td>+33</td>
+                                            <td>+33</td>
+                                            <td>+31</td>
+                                            <td>+26</td>
+                                            <td>+20</td>
+                                            <td>+15</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">ночью</th>
+                                            <td>+5</td>
+                                            <td>+5</td>
+                                            <td>+7</td>
+                                            <td>+10</td>
+                                            <td>+14</td>
+                                            <td>+18</td>
+                                            <td>+21</td>
+                                            <td>+21</td>
+                                            <td>+18</td>
+                                            <td>+13</td>
+                                            <td>+10</td>
+                                            <td>+6</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">вода</th>
+
+                                            <td>+18</td>
+                                            <td>+17</td>
+                                            <td>+17</td>
+                                            <td>+18</td>
+                                            <td>+20</td>
+                                            <td>+23</td>
+                                            <td>+26</td>
+                                            <td>+27</td>
+                                            <td>+26</td>
+                                            <td>+25</td>
+                                            <td>+23</td>
+                                            <td>+20</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Фетхие
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col">янв</th>
+                                            <th scope="col">фев</th>
+                                            <th scope="col">мар</th>
+                                            <th scope="col">апр</th>
+                                            <th scope="col">май</th>
+                                            <th scope="col">июн</th>
+                                            <th scope="col">июл</th>
+                                            <th scope="col">авг</th>
+                                            <th scope="col">сен</th>
+                                            <th scope="col">окт</th>
+                                            <th scope="col">ноя</th>
+                                            <th scope="col">дек</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">днём</th>
+                                            <td>+15</td>
+                                            <td>+16</td>
+                                            <td>+18</td>
+                                            <td>+22</td>
+                                            <td>+26</td>
+                                            <td>+30</td>
+                                            <td>+34</td>
+                                            <td>+34</td>
+                                            <td>+31</td>
+                                            <td>+26</td>
+                                            <td>+21</td>
+                                            <td>+17</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">ночью</th>
+                                            <td>+4</td>
+                                            <td>+5</td>
+                                            <td>+6</td>
+                                            <td>+9</td>
+                                            <td>+12</td>
+                                            <td>+16</td>
+                                            <td>+18</td>
+                                            <td>+18</td>
+                                            <td>+15</td>
+                                            <td>+12</td>
+                                            <td>+8</td>
+                                            <td>+6</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">вода</th>
+                                            <td>+17</td>
+                                            <td>+16</td>
+                                            <td>+18</td>
+                                            <td>+21</td>
+                                            <td>+24</td>
+                                            <td>+27</td>
+                                            <td>+29</td>
+                                            <td>+29</td>
+                                            <td>+27</td>
+                                            <td>+24</td>
+                                            <td>+20</td>
+                                            <td>+18</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Измир
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col">янв</th>
+                                            <th scope="col">фев</th>
+                                            <th scope="col">мар</th>
+                                            <th scope="col">апр</th>
+                                            <th scope="col">май</th>
+                                            <th scope="col">июн</th>
+                                            <th scope="col">июл</th>
+                                            <th scope="col">авг</th>
+                                            <th scope="col">сен</th>
+                                            <th scope="col">окт</th>
+                                            <th scope="col">ноя</th>
+                                            <th scope="col">дек</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">днём</th>
+                                            <td>+11</td>
+                                            <td>+12</td>
+                                            <td>+15</td>
+                                            <td>+20</td>
+                                            <td>+25</td>
+                                            <td>+30</td>
+                                            <td>+32</td>
+                                            <td>+32</td>
+                                            <td>+28</td>
+                                            <td>+23</td>
+                                            <td>+17</td>
+                                            <td>+12</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">ночью</th>
+                                            <td>+3</td>
+                                            <td>+4</td>
+                                            <td>+6</td>
+                                            <td>+10</td>
+                                            <td>+13</td>
+                                            <td>+17</td>
+                                            <td>+20</td>
+                                            <td>+19</td>
+                                            <td>+16</td>
+                                            <td>+12</td>
+                                            <td>+8</td>
+                                            <td>+5</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">вода</th>
+                                            <td>+18</td>
+                                            <td>+17</td>
+                                            <td>+17</td>
+                                            <td>+17</td>
+                                            <td>+20</td>
+                                            <td>+23</td>
+                                            <td>+25</td>
+                                            <td>+26</td>
+                                            <td>+26</td>
+                                            <td>+24</td>
+                                            <td>+22</td>
+                                            <td>+20</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="state__tube">
+                    <iframe width="760" height="515" src="https://www.youtube.com/embed/HbG3l8121H0" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="state__text">
+                    <p class="operators__paragraph"> Если Вы не знаете, где провести отпуск этим летом, то отправляйтесь
+                        в Турцию.
+                        Эта страна по праву считается одной из лучших для проведения любого вида досуга, обладает
+                        хорошей
+                        инфраструктурой, приятным климатом, чистыми пляжами и выходом к теплым морям (Чёрному,
+                        Средиземному,
+                        Эгейскому и Мраморному). Самые популярные места скопления туристов, гостиницы и туристические
+                        центры
+                        находятся на побережье Средиземного моря. О них и пойдет речь в этом материале. Рассмотрим их
+                        более
+                        подробно.</p>
+
+                    <p class="operators__paragraph">Анталья - одно из самых популярных мест Средиземноморья. Ежегодно
+                        огромное количество туристов
+                        посещают этот курорт. Он обладает приятным климатом и чистейшими песчаными пляжами. Если Вы
+                        хотите
+                        качественно провести свой отпуск и получить массу впечатлений, то Вам определенно нужно ехать в
+                        этот
+                        туристический центр. Если же Вы желаете провести активный отдых на море, то лучшего места просто
+                        не
+                        найти. На Ваш выбор предлагаются различные экстремальные виды спорта. Среди которых большой
+                        популярностью пользуются серфинг и водные лыжи. Вы получите массу удовольствий и впечатлений от
+                        проведения своего отпуска на территории Антальи. Что касается ночной жизни, то она здесь кипит
+                        не
+                        хуже дневной. У Вас появится уникальная возможность посетить различные ночные клубы, которые
+                        предлагают уникальные развлекательные программы, начиная от пенной вечеринки и заканчивая
+                        танцами до
+                        самого утра.</p>
+
+                    <p class="operators__paragraph">Кемер располагается между морем и горами. Это зона мягкого климата,
+                        где очень редко идут дожди и
+                        любые другие осадки. Горы надежно берегут этот центр туризма от сильных и холодных ветров,
+                        поэтому
+                        досуг тут проводить одно удовольствие. Кемер отличается удивительной и замечательной природой.
+                        Приехав сюда, Вы можете не только наслаждаться теплым солнцем и кристально чистой водой, но и
+                        совершить поход в горы, сходить на прогулку в хвойный лес и т. д. Что касается пляжей, то они
+                        тут
+                        галечные и каменистые, поэтому любителям песка придется изрядно подумать, прежде, чем ехать
+                        сюда. Но
+                        для остальных людей это идеальное место для проведения активного и здорового времяпровождения.
+                    </p>
+
+                    <p class="operators__paragraph">Центр туризма Белек может похвастаться сильной концентрацией лесов.
+                        Тут Вы встретите сосновые,
+                        хвойные, эвкалиптовые деревья, которые растут по всей территории курортного комплекса. Только не
+                        думайте, что лишь ими одними Белек заслужил мировую славу и признание. Вовсе нет. Во-первых,
+                        только
+                        здесь можно увидеть и полюбоваться огромным количеством редчайших птиц, которые водятся на
+                        данной
+                        территории. Во-вторых, эта местность является мировым гольф - центром, куда ежегодно съезжаются
+                        известные спортсмены и личности, которые предпочитают этот вид спорта. Если и Вы желаете
+                        попробовать
+                        свои силы в гольфе, то для Вас постоянно открыты двери многих школ и клубов по обучению этому
+                        спорту. Многие люди покупают туры в Турцию только для того, чтобы посетить Белек. Он по праву
+                        считается одним из самых дорогих и фешенебельных рекреационных центров Средиземноморья.</p>
+
+                    <p class="operators__paragraph">Сиде - небольшой туристический комплекс, который располагается на
+                        полуострове, граничащим с
+                        Антальей. Тут Вы найдете огромное количество различных достопримечательностей и памяток
+                        древности.
+                        Это идеальное место для тех людей, которые любят не только лежать на песке или купаться, но и
+                        узнавать что-то новое и интересное для себя. Если же Вы захотите посетить близлежащую Анталью и
+                        окунуться в мир ее ночной жизни, то Вы смело можете воспользоваться одним из многих видов
+                        транспорта, который доставит Вас туда в мгновение ока.</p>
+
+                    <p class="operators__paragraph">Аланья - считается бюджетным местом проведения отпуска. Цены на
+                        отдых здесь очень демократичны и
+                        доступны для большинства туристов. Многие наши соотечественники выбирают это место, как
+                        отправную
+                        точку для дальнейшего путешествия по всей территории Турции. Главной достопримечательностью
+                        Аланьи
+                        являются пещеры, которые с каждым годом все больше и больше привлекают туристов из различных
+                        уголков
+                        земного шара. Если Вы не видели их, то Вам непременно стоит исправить эту оплошность.<br>
+
+                    <p class="operators__paragraph">Что касается Эгейского побережья, то оно также богато на различные
+                        достопримечательности,
+                        туристические и культурные центры. Крупнейшими курортами этой местности являются: Мармарис,
+                        Фетхие,
+                        Бодрум, Кушадасы, Памукале. Рассмотрим их детальнее.</p>
+
+                    <p class="operators__paragraph">Мармарис по праву считается европейским туристическим комплексом.
+                        Здесь Вы легко можете
+                        уединиться
+                        от назойливой суеты и в спокойном, размеренном темпе провести весь свой отпуск. Территория
+                        комплекса
+                        состоит из трех независимых островов, которые расположены в живописном заливе. Как правило,
+                        отдыхающих людей здесь очень мало, отели не всегда заполнены, поэтому никто не будет Вам мешать
+                        проводить отпуск и наслаждаться жизнью. Отдельных слов заслуживает пейзаж и природа Мармариса.
+                        Многие люди приезжают сюда лишь для того, чтобы увидеть эту красоту своими собственными глазами.
+                    </p>
+
+                    <p class="operators__paragraph">Фетхие - туристическое место, которое предлагает своим посетителям
+                        пляжный отдых на любой вкус.
+                        На
+                        территории комплекса расположен, как галечный, так и песчаный пляж, которые содержаться в
+                        идеальном
+                        состоянии и с каждым годом привлекают все больше туристов и посетителей.</p>
+
+                    <p class="operators__paragraph">Бодрум - идеальное место для любителей дайвинга и серфинга. На
+                        территории этого туристического
+                        центра постоянно работают частные школы и инструкторы, которые способны быстро и качественно
+                        обучить
+                        любого человека базовым премудростям этих дисциплин. Также это место может похвастаться
+                        насыщенной
+                        «ночной жизнью», поэтому здесь так много молодежи со всех уголков мира.</p>
+
+                    <p class="operators__paragraph">Если же и у Вас возникло желание посетить эту уникальную и
+                        разноплановую страну, то
+                        воспользуйтесь
+                        предложением туристического агентства Корсар Херсон, которое постоянно предлагает для всех своих
+                        клиентов горящие путевки в Турцию. Это уникальное предложение позволит Вам не только сэкономить
+                        свои
+                        денежные средства, но и увидеть своими глазами все исторические и культурные ценности этой
+                        страны.
+                        Также эта возможность поможет Вам активно и с пользой провести заслуженный отпуск в кругу семьи,
+                        получить заряд сил и энергии для дальнейших подвигов на работе. Перестаньте сомневаться и
+                        звоните в
+                        это туристическое агентство прямо сейчас. Вы точно не пожалеете!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div id="turkey"></div>
+        <div class="container">
+
+            <div class="footer__title">контактная информация</div>
+            <div class="footer__body">
+                <div class="footer__box">
+                    <h3>на соборной 76</h3>
+                    <p>Тел. +38(0552)58 96 32, +38(0552)58 25 87, +38(095)11 25 97</p>
+                    <p>E-mail:travel@morgan.ks.ua</p>
+                    <p>Сайт:http://www.morgan.ks.ua</p>
+                    <p>Aдресс: 73003, г.Херсон, ул. Соборная 76</p>
+                    <p>Время работы:</p>
+                    <p>пн-пт: 9:00-17:00, сб: 9:00-14:00, вс: выходной</p>
+                </div>
+                <div class="footer__box">
+                    <h3>на ушакова 56</h3>
+                    <p>Тел. +38(0552)58 11 32, +38(0552)58 56 87, +38(095)22 25 87</p>
+                    <p>E-mail:travel@morgan.ks.ua</p>
+                    <p>Сайт:http://www.morgan.ks.ua</p>
+                    <p>Aдресс: 73003, г.Херсон, ул. Ушакова 56</p>
+                    <p>Время работы:</p>
+                    <p>пн-пт: 9:00-17:00, сб: 9:00-14:00, вс: выходной</p>
+                </div>
+            </div>
+            <div class="footer__foot">
+                <h3>мы в соцсетях</h3>
+                <p>Последние новости, горящие туры, подбор пакетных туров, отзывы, авиаперелёты и многое другое!</p>
+                <div class="footer__icon">
+                    <a href="https://www.facebook.com/" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAQCAYAAADESFVDAAAAbklEQVQokWN88eIFAxowZmBgSGNgYFCCCu9hwaJgNwMDgyCyIBOaog50BSCAbpILEtuEgYHhLDaTkMFZXNZhBUxQK/5DMTKAiXUQY9I9kMPfgxhQASVkSRiNHpjIVjKS7PDBpgg97mZhqGBgYAAAtjwVox0jPF8AAAAASUVORK5CYII=" alt="facebook"
+                            class="social"></a>
+                    <a href="https://twitter.com/" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAMCAYAAAC9QufkAAAAwklEQVQokY2R0Q2CQBBEn4YGsARsgRJsQUvQEmgBS9AWLMEWpAT9vj9aMHPZTZYLASYhl2NvZmdndyklVlADV6ABfsDTnjdOfgBDKES8gVO4j3be9q5iAr11cpwLIlbPn5MHOzvgayJzRMddLqtgZQyq3UoO2Xq0XS+/n0DB4YGJ+DGRLTiou3eWjddGouad2Ba0Jl/Dkl2RMyJZhWNIvoSEL7GB0tacWotOrWZubgmKmIOKnfVD8/q6HJ6DSG1JBPgDyJIvM7Pcex4AAAAASUVORK5CYII=" alt="twitter"
+                            class="social tw--social"></a>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script>
+        let map;
+
+        function initMap() {
+            const uluru = { lat: 36.885, lng: 30.718 };
+            map = new google.maps.Map(document.getElementById("turkey"), {
+                center: uluru,
+                zoom: 14,
+
+            });
+
+            const marker = new google.maps.Marker({
+                position: uluru,
+                map: map,
+            });
+        }
+    </script>
+<script type="text/javascript" src="bundle.js"></script></body>
+
+</html>

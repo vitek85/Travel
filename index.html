@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Морган</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?&callback=initMap&libraries=&v=weekly" defer></script>
+  <link rel="icon" type="image/png" href="img/favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<link rel="shortcut icon" href="favicon.ico"></head>
+
+<body>
+  <div class="modal">
+    <div class="modal__block">
+      <button class="modal__close">ОК</button>
+    </div>
+  </div>
+  <header class="header">
+    <div class="container">
+      <div class="header__body">
+        <div class="header__content">
+          <div class="header__right">
+            <div class="header__title">Морган</div>
+            <div class="header__text">туристическое агенство</div>
+          </div>
+          <nav class="header__nav">
+            <ul class="header__list">
+              <li><a href="#header">главная</a></li>
+              <li><a href="#about">о нас</a></li>
+              <li><a href="#services"> услуги </a></li>
+              <li><a href="#trip">направления</a></li>
+              <li><a href="#comments">отзывы</a></li>
+              <li> <a href="#form">форма </a></li>
+              <li><a href="#contacts"> контакты</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="burger">
+          <span class="burger__line burger__line_first"></span>
+          <span class="burger__line burger__line_second"></span>
+          <span class="burger__line burger__line_third"></span>
+          <span class="burger__line burger__line_fourth"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="section1" id="header">
+      <div class="container">
+        <div class="section1__body">
+          <div class="section1__title">Заказ тура</div>
+          <div class="section1__content">
+            <form class="origin" action="#">
+              <div class="origin__left">
+                <div class="origin__row">
+                  <label for="" class="origin__label">Транспорт: </label>
+                  <select name="transport" id="transport" class="origin__input form__input--select">
+                    <option value="" disabled="disabled" selected="selected" hidden>Выбрать</option>
+                    <option value="Все">Все</option>
+                    <option value="Автобус">Автобус</option>
+                    <option value="Авиа">Авиа</option>
+                  </select>
+                </div>
+                <div class="origin__row">
+                  <label for="" class="origin__label">Страна: </label>
+                  <select name="country" id="country" class="origin__input form__input--select">
+                    <option value="" disabled="disabled" selected="selected" hidden>Выбрать</option>
+                    <option value="Турция">Турция</option>
+                    <option value="Египет">Египет</option>
+                    <option value="Болгария">Болгария</option>
+                    <option value="ОАЭ">ОАЭ</option>
+                    <option value="Австрия">Австрия</option>
+                    <option value="Хорватия">Хорватия</option>
+                    <option value="Доминикана">Доминикана</option>
+                    <option value="Греция">Греция</option>
+                    <option value="Андорра">Андорра</option>
+                  </select>
+                </div>
+                <div class="origin__row">
+                  <label for="" class="origin__label">Питание: </label>
+                  <select name="food" id="food" class="origin__input form__input--select">
+                    <option value="" disabled="disabled" selected="selected" hidden>Выбрать</option>
+                    <option value="Любое питание">Любое питание</option>
+                    <option value="Завтрак">Завтрак</option>
+                    <option value="Полупансион">Полупансион</option>
+                    <option value="Полный пансион">Полный пансион</option>
+                    <option value="Всё включено">Всё включено</option>
+                    <option value="Ультра всё включено">Ультра всё включено</option>
+                  </select>
+                </div>
+                <div class="origin__number">
+                  <div class="origin__date">
+                    <label for="" class="origin__label">Дата<br>вылета: </label>
+                    <input class="origin__dateInput" type="text" placeholder="13.02.21">
+                    <input class="origin__dateInput" type="text" placeholder="25.02.21">
+                  </div>
+                  <div class="origin__price">
+                    <label for="" class="origin__label">Цена за<br>номер: </label>
+                    <input class="origin__priceItem" type="text" placeholder="0">
+                    <input class="origin__priceItem" type="text" placeholder="9000000">
+                    <select name="price" class="origin__priceItem" class="origin__input3 form__input--select">
+                      <option value="" disabled="disabled" selected="selected" hidden>Валюта</option>
+                      <option value="price">USD</option>
+                      <option value="price">EUR</option>
+                      <option value="price">ГРН</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="origin__right">
+                <div class="origin__row">
+                  <label for="" class="origin__label">Тип<br>жилья: </label>
+                  <select name="apartment" id="apartment" class="origin__input form__input--select">
+                    <option value="" disabled="disabled" selected="selected" hidden>Выбрать</option>
+                    <option value="Хостел">Хостел</option>
+                    <option value="Шале">Шале</option>
+                    <option value="Вилла">Вилла</option>
+                    <option value="Апарт-отель">Апарт-отель</option>
+                    <option value="Лодж">Лодж</option>
+                    <option value="Апартаменты">Апартаменты</option>
+                  </select>
+                </div>
+                <div class="origin__date origin__dateroom">
+                  <label for="" class="origin__label">Размещение<br>в номере: </label>
+                  <div class="origin__fox">
+                    <p>Взрослые:</p>
+                    <select name="room" class="origin__input2 form__input--select">
+                      <option value="" disabled="disabled" selected="selected" hidden>Выбрать</option>
+                      <option value="one">1</option>
+                      <option value="two">2</option>
+                      <option value="three">3</option>
+                      <option value="four">4</option>
+                    </select>
+                  </div>
+                  <div class="origin__fox">
+                    <p>Дети:</p>
+                    <select name="room" class="origin__input2 form__input--select">
+                      <option value="" disabled="disabled" selected="selected" hidden>Выбрать</option>
+                      <option value="one">1</option>
+                      <option value="two">2</option>
+                      <option value="three">3</option>
+                      <option value="four">4</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="origin__date">
+                  <label for="" class="origin__label">Ночей в<br> туре: </label>
+                  <div class="origin__fox">
+                    <select name="room" class="origin__input2 form__input--select">
+                      <option value="" disabled="disabled" selected="selected" hidden>От</option>
+                      <option value="one">1</option>
+                      <option value="two">2</option>
+                      <option value="three">3</option>
+                      <option value="four">4</option>
+                      <option value="five">5</option>
+                      <option value="six">6</option>
+                    </select>
+                  </div>
+                  <div class="origin__fox">
+                    <select name="room" class="origin__input2 form__input--select">
+                      <option value="" disabled="disabled" selected="selected" hidden>До</option>
+                      <option value="seven">7</option>
+                      <option value="ten">10</option>
+                      <option value="twelve">12</option>
+                      <option value="fourtheen">14</option>
+                      <option value="eighteen">18</option>
+                      <option value="twentyone">21</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="origin__row origin__row2">
+                  <label for="" class="origin__label">Вылет из: </label>
+                  <select name="city" class="origin__input city form__input--select">
+                    <option value="" disabled="disabled" selected="selected" hidden>Город</option>
+                    <option value="Киев">Киев</option>
+                    <option value="Одесса">Одесса</option>
+                    <option value="Харьков">Харьков</option>
+                    <option value="Львов">Львов</option>
+                    <option value="Днепр">Днепр</option>
+                    <option value="Херсон">Херсон</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+            <div class="origin__button">
+              <button class="origin__butt">Выбрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="operators">
+      <div class="container operators__all">
+        <div class="swiper-operator">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="./joinup.html"><img src="./images/4158b4dbb182d5b7e3a87732d5aeb63f-joinup.png" class="operators__img"></a>
+            </div>
+            <div class="swiper-slide">
+              <a href="./pegas.html"><img src="./images/80420726cfce6cd67f236194fb1d9320-LogoPegas-borders.png"
+                  class="operators__img"></a>
+            </div>
+            <div class="swiper-slide">
+              <a href="./tez.html"><img
+                  src="./images/c484193961d3bf1b65bdc430b7d60662-800x400_7a960328e5a1573a6cfd7b90df98bd06___jpg____4_68181d9c.png"
+                  class="operators__img"></a>
+            </div>
+            <div class="swiper-slide">
+              <a href="./coral.html"><img src="./images/f2d92404e9f3b44a25558b841f040099-logo-coral-travel.png"
+                  class="operators__img"></a>
+            </div>
+            <div class="swiper-slide">
+              <a href="./mouzenidis.html"><img src="./images/fea562664d08486e996e11cbe2dc2e9d-mouzenidis.png"
+                  class="operators__img"></a>
+            </div>
+            <div class="swiper-slide">
+              <a href="./akkord.html"><img src="./images/ab6fca0c433a14118ef945f75c2728ce-unnamed.png" class="operators__img"></a>
+            </div>
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-paginationOperator"></div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </section>
+    <section class="section2" id="about">
+      <div class="container">
+        <div class="section2__content">
+          <div class="section2__title">О нас</div>
+          <div class="section2__text">
+            <div class="section2__aside"> Мы рады приветствовать Вас на сайте. Турагентство «МОРГАН» основано в 1995
+              году
+              в городе Херсоне и является профессионалом турбизнеса. Штат компании включает высококвалифицированный
+              персонал с длительным опытом работы в сфере туризма.</div>
+            <div class="section2__aside"> Наша компания – это стабильная, надёжная туристическая фирма. Мы уверены в
+              завтрашнем дне, так как способны предложить Вам туристический продукт самого высокого качества. В нашем
+              офисе Вас всегда ждет самое отзывчивое, доброжелательное отношение. Мы любим наших туристов и дорожим ими!
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section3" id="services">
+      <div class="container">
+        <div class="section3__body">
+          <div class="section3__title">услуги нашего агенство</div>
+          <div class="section3__content">
+            <div class="section3__top">
+              <div class="section3__box">
+                <div class="section3__circle">
+                  <ion-icon name="bed" class="animation animate__animated"></ion-icon>
+                </div>
+                <div class="section3__subtitle">бронь гостиниц</div>
+                <div class="section3__text">Бронирование отелей, апартаментов, вилл всех категорий и уровней в
+                  интересующих
+                  наших клиентов странах.</div>
+              </div>
+              <div class="section3__box">
+                <div class="section3__circle">
+                  <ion-icon name="airplane" class="animation animate__animated"></ion-icon>
+                </div>
+                <div class="section3__subtitle">aвиабилеты</div>
+                <div class="section3__text">В нашем агентстве можно заказать и приобрести авиабилеты в любую страну мира
+                  по специальным тарифам известных авиакомпаний.</div>
+              </div>
+              <div class="section3__box">
+                <div class="section3__circle">
+                  <ion-icon name="search" class="animation animate__animated"></ion-icon>
+                </div>
+                <div class="section3__subtitle">продажа туров</div>
+                <div class="section3__text">Воспользуйтесь удобной системой поиска туров для выбора оптимального
+                  варианта.</div>
+              </div>
+            </div>
+          </div>
+          <div class="section3__top">
+            <div class="section3__box">
+              <div class="section3__circle">
+                <ion-icon name="card" class="animation animate__animated"></ion-icon>
+              </div>
+              <div class="section3__subtitle">визовая поддержка</div>
+              <div class="section3__text">Специалисты нашего агентства по оформлению визовых документов всегда
+                предоставят Вам квалифицированную помощь и консультацию.</div>
+            </div>
+            <div class="section3__box">
+              <div class="section3__circle">
+                <ion-icon name="gift" class="animation animate__animated"></ion-icon>
+              </div>
+              <div class="section3__subtitle">подарочные сертификаты</div>
+              <div class="section3__text">Оформить подарок для путешественника можно в форме подарочного сертификата с
+                фиксированной суммой.</div>
+            </div>
+            <div class="section3__box">
+              <div class="section3__circle">
+                <ion-icon name="medkit" class="animation animate__animated"></ion-icon>
+              </div>
+              <div class="section3__subtitle">страхование</div>
+              <div class="section3__text">Это и гарантированный способ обезопасить себя от главных рисков в поездке, и
+                одно из условий для пересечения границы.</div>
+            </div>
+          </div>
+          <div class="section3__top">
+            <div class="section3__box">
+              <div class="section3__circle">
+                <ion-icon name="information" class="animation animate__animated"></ion-icon>
+                </ion-icon>
+              </div>
+              <div class="section3__subtitle">подбор тура</div>
+              <div class="section3__text">Помощь по выбору стран и отелей для путешествия по вашим индивидуальным
+                запросам.</div>
+            </div>
+            <div class="section3__box">
+              <div class="section3__circle">
+                <ion-icon name="hand-left" class="animation animate__animated"></ion-icon>
+              </div>
+              <div class="section3__subtitle">индивидуальный подход</div>
+              <div class="section3__text">Составление индивидуальных путешествий и маршрутов по всем доступным
+                туристическим направлениям.</div>
+            </div>
+            <div class="section3__box">
+              <div class="section3__circle">
+                <ion-icon name="call" class="animation animate__animated"></ion-icon>
+              </div>
+              <div class="section3__subtitle">поплнение "travelsim"</div>
+              <div class="section3__text">Составление индивидуальных путешествий и маршрутов по всем доступным
+                туристическим направлениям.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <section class="section4" id="trip">
+      <div class="container">
+        <div class="section4__content">
+          <div class="section4__title">популярные направления</div>
+          <div class="section4__country">
+            <a href="./turkey.html">
+              <div class="section4__box">
+                <img src="./images/5b5bc115dacf9d9f7c0fb8aa82842bb9-turkey.jpg" alt="turkey" class="section4__img">
+                <span class="section4__text">Турция</span>
+              </div>
+            </a>
+            <a href="./egypt.html">
+              <div class="section4__box">
+                <img src="./images/3a45ba304df1cc64a1af9bbc7fde7ab7-egypt.jpg" alt="egypt" class="section4__img">
+                <span class="section4__text">Египет</span>
+              </div>
+            </a>
+            <a href="./oae.html">
+              <div class="section4__box">
+                <img src="./images/ddcb6f9555d024a19c7f3dbef28243f4-oae.jpg" alt="oae" class="section4__img">
+                <span class="section4__text">ОАЭ</span>
+              </div>
+            </a>
+            <a href="./austria.html">
+              <div class="section4__box">
+                <img src="./images/f6fb34273d6460984f02e63b4eaf642b-austria.jpg" alt="austria" class="section4__img">
+                <span class="section4__text">Австрия</span>
+              </div>
+            </a>
+            <a href="./andorra.html">
+              <div class="section4__box">
+                <img src="./images/f6b097bb4b6ab36e426905e07c1d08b3-andorra.jpg" alt="andorra" class="section4__img">
+                <span class="section4__text">Андорра</span>
+              </div>
+            </a>
+            <a href="./bolgaria.html">
+              <div class="section4__box">
+                <img src="./images/80755f3f07ac5a5778f8acfb6bd6b857-bolgaria.jpg" alt="bolgaria" class="section4__img">
+                <span class="section4__text">Болгария</span>
+              </div>
+            </a>
+            <a href="./brazil.html">
+              <div class="section4__box">
+                <img src="./images/2340790bee7da0a9c66ac1d7eec7b9fd-brazil.jpg" alt="brazil" class="section4__img">
+                <span class="section4__text">Бразилия</span>
+              </div>
+            </a>
+            <a href="./dominikana.html">
+              <div class="section4__box">
+                <img src="./images/989925547f430c7784ba01ab150c889e-dominicana.jpg" alt="dominikana" class="section4__img">
+                <span class="section4__text">Доминикана</span>
+              </div>
+            </a>
+            <a href="./greece.html">
+              <div class="section4__box">
+                <img src="./images/88171a9b1922d292c6a2194e057807d7-greece.jpg" alt="greece" class="section4__img">
+                <span class="section4__text">Греция</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section5" id="comments">
+      <div class="container">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="section5__body">
+                <div class="section5__box">
+                  <p class="section5__text"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAABiUlEQVQ4jWNgGGjACGOsCl3F/MGII5aTi8Ph6bMXdRWdcY/QFXeXLOIWlhTKZGRg0E4s9klkYGBgYGFgYGCY1LxemVFSaKmFnobp14+f/7189GwyAwMDigELezZ5CktJ9ippKmnevnwLLse0KnQVs5SU8FJDC0Pzd6/ePLty/kbeF94H55E1T29ZJS0uJztVQ19d8/71e5dfPXmZCZNj+WjIGWemo27y//9/hod3Hm9ILfOZju50Xn7BKmVNRcUvn77+fXj/aUdWdcA2uAu4+TksuXk4mb98/srw6d2HbeiaGRgYGHh4uJQZmZgY3rx4/erzx7ebkeVYmJlZOBkYGBiYWZgZZBRkajcuPlbJwMDA8OHNx5fxhZ6hDAwMDIzMjFwMDAwM3Lw8XBq6mls3Lj7GAFHz4STLf2hMcHFzMuia61nCTL569sphdJeISorwi0qK2ML4Zw6ffcSEzcmkgGFgAMuPr99OnT9y9j+6xLdv31/A2B/efjh5/sjZh+hqfnz9dppSB1AOAGfQh1eGjH2tAAAAAElFTkSuQmCC" alt=""> В Египте в первый
+                    раз, до
+                    этого только Турция. Страна потрясла своими на редкость
+                    гадкими продавцами и потрясающим морем. Оно великолепное, прозрачное, чистое, завораживающими рифами
+                    и
+                    кишащее чудными рыбками.</p>
+                  <p class="section5__text">Дарья</p>
+                </div>
+                <div class="section5__box">
+                  <p class="section5__text"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAABiUlEQVQ4jWNgGGjACGOsCl3F/MGII5aTi8Ph6bMXdRWdcY/QFXeXLOIWlhTKZGRg0E4s9klkYGBgYGFgYGCY1LxemVFSaKmFnobp14+f/7189GwyAwMDigELezZ5CktJ9ippKmnevnwLLse0KnQVs5SU8FJDC0Pzd6/ePLty/kbeF94H55E1T29ZJS0uJztVQ19d8/71e5dfPXmZCZNj+WjIGWemo27y//9/hod3Hm9ILfOZju50Xn7BKmVNRcUvn77+fXj/aUdWdcA2uAu4+TksuXk4mb98/srw6d2HbeiaGRgYGHh4uJQZmZgY3rx4/erzx7ebkeVYmJlZOBkYGBiYWZgZZBRkajcuPlbJwMDA8OHNx5fxhZ6hDAwMDIzMjFwMDAwM3Lw8XBq6mls3Lj7GAFHz4STLf2hMcHFzMuia61nCTL569sphdJeISorwi0qK2ML4Zw6ffcSEzcmkgGFgAMuPr99OnT9y9j+6xLdv31/A2B/efjh5/sjZh+hqfnz9dppSB1AOAGfQh1eGjH2tAAAAAElFTkSuQmCC" alt=""> Друзья! Хочу выразить
+                    огромную благодарность туристическому агентству Морган и
+                    его
+                    сотрудникам за организацию шубного тура, Fur fashion tur, в Грецию! Я очень долго думала возможно ли
+                    это,
+                    но опытные сотрудники Моргана все мне подробно рассказали и объяснили.</p>
+                  <p class="section5__text">Елена</p>
+                </div>
+                <div class="section5__box">
+                  <p class="section5__text"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAABiUlEQVQ4jWNgGGjACGOsCl3F/MGII5aTi8Ph6bMXdRWdcY/QFXeXLOIWlhTKZGRg0E4s9klkYGBgYGFgYGCY1LxemVFSaKmFnobp14+f/7189GwyAwMDigELezZ5CktJ9ippKmnevnwLLse0KnQVs5SU8FJDC0Pzd6/ePLty/kbeF94H55E1T29ZJS0uJztVQ19d8/71e5dfPXmZCZNj+WjIGWemo27y//9/hod3Hm9ILfOZju50Xn7BKmVNRcUvn77+fXj/aUdWdcA2uAu4+TksuXk4mb98/srw6d2HbeiaGRgYGHh4uJQZmZgY3rx4/erzx7ebkeVYmJlZOBkYGBiYWZgZZBRkajcuPlbJwMDA8OHNx5fxhZ6hDAwMDIzMjFwMDAwM3Lw8XBq6mls3Lj7GAFHz4STLf2hMcHFzMuia61nCTL569sphdJeISorwi0qK2ML4Zw6ffcSEzcmkgGFgAMuPr99OnT9y9j+6xLdv31/A2B/efjh5/sjZh+hqfnz9dppSB1AOAGfQh1eGjH2tAAAAAElFTkSuQmCC" alt=""> Хотим поблагодарить
+                    за
+                    прекрасную поездку. Нам очень понравилось. Перелет был
+                    очень комфортный,выбрали себе спец.питание. Мне очень понравилось халяльное. Рейс туда немного
+                    задержали,поэтому ожидание было небольшим в Бангкоке.</p>
+                  <p class="section5__text">Ирина</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="swiper-slide">
+                <div class="section5__body">
+                  <div class="section5__box">
+                    <p class="section5__text"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAABiUlEQVQ4jWNgGGjACGOsCl3F/MGII5aTi8Ph6bMXdRWdcY/QFXeXLOIWlhTKZGRg0E4s9klkYGBgYGFgYGCY1LxemVFSaKmFnobp14+f/7189GwyAwMDigELezZ5CktJ9ippKmnevnwLLse0KnQVs5SU8FJDC0Pzd6/ePLty/kbeF94H55E1T29ZJS0uJztVQ19d8/71e5dfPXmZCZNj+WjIGWemo27y//9/hod3Hm9ILfOZju50Xn7BKmVNRcUvn77+fXj/aUdWdcA2uAu4+TksuXk4mb98/srw6d2HbeiaGRgYGHh4uJQZmZgY3rx4/erzx7ebkeVYmJlZOBkYGBiYWZgZZBRkajcuPlbJwMDA8OHNx5fxhZ6hDAwMDIzMjFwMDAwM3Lw8XBq6mls3Lj7GAFHz4STLf2hMcHFzMuia61nCTL569sphdJeISorwi0qK2ML4Zw6ffcSEzcmkgGFgAMuPr99OnT9y9j+6xLdv31/A2B/efjh5/sjZh+hqfnz9dppSB1AOAGfQh1eGjH2tAAAAAElFTkSuQmCC" alt=""> О фирме Морган
+                      узнал будучи в Паттайе, совершенно случайно по сарафанному радио, от новых знакомых. Александр
+                      оказался открытым и общительным человеком. Общались напрямую, и по Viber. Всегда на связи. Самые
+                      лучшие цены. Очень рекомендую!</p>
+                    <p class="section5__text">Алексей</p>
+                  </div>
+                  <div class="section5__box">
+                    <p class="section5__text"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAABiUlEQVQ4jWNgGGjACGOsCl3F/MGII5aTi8Ph6bMXdRWdcY/QFXeXLOIWlhTKZGRg0E4s9klkYGBgYGFgYGCY1LxemVFSaKmFnobp14+f/7189GwyAwMDigELezZ5CktJ9ippKmnevnwLLse0KnQVs5SU8FJDC0Pzd6/ePLty/kbeF94H55E1T29ZJS0uJztVQ19d8/71e5dfPXmZCZNj+WjIGWemo27y//9/hod3Hm9ILfOZju50Xn7BKmVNRcUvn77+fXj/aUdWdcA2uAu4+TksuXk4mb98/srw6d2HbeiaGRgYGHh4uJQZmZgY3rx4/erzx7ebkeVYmJlZOBkYGBiYWZgZZBRkajcuPlbJwMDA8OHNx5fxhZ6hDAwMDIzMjFwMDAwM3Lw8XBq6mls3Lj7GAFHz4STLf2hMcHFzMuia61nCTL569sphdJeISorwi0qK2ML4Zw6ffcSEzcmkgGFgAMuPr99OnT9y9j+6xLdv31/A2B/efjh5/sjZh+hqfnz9dppSB1AOAGfQh1eGjH2tAAAAAElFTkSuQmCC" alt=""> Замечательный тур.
+                      Очень хорошо, что проезжали через Дрезден и Саксонию. Очень понравилась дополнительная экскурсия в
+                      Карловы-Вары. Нам очень повезло с погодой и поэтому многое увидели. Хорошо, что начинали рано
+                      утром, до потока людей!!! Смогла насладиться видами, зданиями и природой! Прага замечательная.
+                    </p>
+                    <p class="section5__text">Алла</p>
+                  </div>
+                  <div class="section5__box">
+                    <p class="section5__text"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAABiUlEQVQ4jWNgGGjACGOsCl3F/MGII5aTi8Ph6bMXdRWdcY/QFXeXLOIWlhTKZGRg0E4s9klkYGBgYGFgYGCY1LxemVFSaKmFnobp14+f/7189GwyAwMDigELezZ5CktJ9ippKmnevnwLLse0KnQVs5SU8FJDC0Pzd6/ePLty/kbeF94H55E1T29ZJS0uJztVQ19d8/71e5dfPXmZCZNj+WjIGWemo27y//9/hod3Hm9ILfOZju50Xn7BKmVNRcUvn77+fXj/aUdWdcA2uAu4+TksuXk4mb98/srw6d2HbeiaGRgYGHh4uJQZmZgY3rx4/erzx7ebkeVYmJlZOBkYGBiYWZgZZBRkajcuPlbJwMDA8OHNx5fxhZ6hDAwMDIzMjFwMDAwM3Lw8XBq6mls3Lj7GAFHz4STLf2hMcHFzMuia61nCTL569sphdJeISorwi0qK2ML4Zw6ffcSEzcmkgGFgAMuPr99OnT9y9j+6xLdv31/A2B/efjh5/sjZh+hqfnz9dppSB1AOAGfQh1eGjH2tAAAAAElFTkSuQmCC" alt=""> Спасибо большое за
+                      замечательную поездку в Венгрию. Ваши советы пригодились и было легко ориентироваться. Мы попали в
+                      излучину Дуная в понедельник, чудесная экскурсия. Отель Ibis Budapest Centrum был очень хороший,
+                      спасибо Вам большое. Купальни посетили и я поняла, что поеду туда еще, небольшая , но совершенно
+                      замечательная страна.&nbsp; Ждем следующего отпуска. И, конечно, опять к Вам.</p>
+                    <p class="section5__text">Ирина</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="swiper-slide">
+                <div class="section5__body">
+                  <div class="section5__box">
+                    <p class="section5__text"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAABiUlEQVQ4jWNgGGjACGOsCl3F/MGII5aTi8Ph6bMXdRWdcY/QFXeXLOIWlhTKZGRg0E4s9klkYGBgYGFgYGCY1LxemVFSaKmFnobp14+f/7189GwyAwMDigELezZ5CktJ9ippKmnevnwLLse0KnQVs5SU8FJDC0Pzd6/ePLty/kbeF94H55E1T29ZJS0uJztVQ19d8/71e5dfPXmZCZNj+WjIGWemo27y//9/hod3Hm9ILfOZju50Xn7BKmVNRcUvn77+fXj/aUdWdcA2uAu4+TksuXk4mb98/srw6d2HbeiaGRgYGHh4uJQZmZgY3rx4/erzx7ebkeVYmJlZOBkYGBiYWZgZZBRkajcuPlbJwMDA8OHNx5fxhZ6hDAwMDIzMjFwMDAwM3Lw8XBq6mls3Lj7GAFHz4STLf2hMcHFzMuia61nCTL569sphdJeISorwi0qK2ML4Zw6ffcSEzcmkgGFgAMuPr99OnT9y9j+6xLdv31/A2B/efjh5/sjZh+hqfnz9dppSB1AOAGfQh1eGjH2tAAAAAElFTkSuQmCC" alt=""> Качество,
+                      проверенное временем! Уже больше 10 лет я путешествую с Морган как по Украине, так и за
+                      рубежом. Всегда самые положительные эмоции просто превосходят все ожидания. Оксана - хозяйка
+                      фирмы, она же главный энерджайзер и потрясающий гид, а ещё - волшебная фея, которая всегда чем-то
+                      нас удивляет. Друзья! Рекомендую! </p>
+                    <p class="section5__text">Наталья</p>
+                  </div>
+                  <div class="section5__box">
+                    <p class="section5__text"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAABiUlEQVQ4jWNgGGjACGOsCl3F/MGII5aTi8Ph6bMXdRWdcY/QFXeXLOIWlhTKZGRg0E4s9klkYGBgYGFgYGCY1LxemVFSaKmFnobp14+f/7189GwyAwMDigELezZ5CktJ9ippKmnevnwLLse0KnQVs5SU8FJDC0Pzd6/ePLty/kbeF94H55E1T29ZJS0uJztVQ19d8/71e5dfPXmZCZNj+WjIGWemo27y//9/hod3Hm9ILfOZju50Xn7BKmVNRcUvn77+fXj/aUdWdcA2uAu4+TksuXk4mb98/srw6d2HbeiaGRgYGHh4uJQZmZgY3rx4/erzx7ebkeVYmJlZOBkYGBiYWZgZZBRkajcuPlbJwMDA8OHNx5fxhZ6hDAwMDIzMjFwMDAwM3Lw8XBq6mls3Lj7GAFHz4STLf2hMcHFzMuia61nCTL569sphdJeISorwi0qK2ML4Zw6ffcSEzcmkgGFgAMuPr99OnT9y9j+6xLdv31/A2B/efjh5/sjZh+hqfnz9dppSB1AOAGfQh1eGjH2tAAAAAElFTkSuQmCC" alt=""> Хорошая турфирма,
+                      хороший менеджер ,знает свое дело. Нам уделили время, подобрали тур, помогли понять, куда хотим
+                      поехать. Мы остались очень довольны и теперь с уверенностью можем рекомендовать эту турфирму
+                      друзьям))))</p>
+                    <p class="section5__text">Антон</p>
+                  </div>
+                  <div class="section5__box">
+                    <p class="section5__text"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAABiUlEQVQ4jWNgGGjACGOsCl3F/MGII5aTi8Ph6bMXdRWdcY/QFXeXLOIWlhTKZGRg0E4s9klkYGBgYGFgYGCY1LxemVFSaKmFnobp14+f/7189GwyAwMDigELezZ5CktJ9ippKmnevnwLLse0KnQVs5SU8FJDC0Pzd6/ePLty/kbeF94H55E1T29ZJS0uJztVQ19d8/71e5dfPXmZCZNj+WjIGWemo27y//9/hod3Hm9ILfOZju50Xn7BKmVNRcUvn77+fXj/aUdWdcA2uAu4+TksuXk4mb98/srw6d2HbeiaGRgYGHh4uJQZmZgY3rx4/erzx7ebkeVYmJlZOBkYGBiYWZgZZBRkajcuPlbJwMDA8OHNx5fxhZ6hDAwMDIzMjFwMDAwM3Lw8XBq6mls3Lj7GAFHz4STLf2hMcHFzMuia61nCTL569sphdJeISorwi0qK2ML4Zw6ffcSEzcmkgGFgAMuPr99OnT9y9j+6xLdv31/A2B/efjh5/sjZh+hqfnz9dppSB1AOAGfQh1eGjH2tAAAAAElFTkSuQmCC" alt=""> Хорошее агентство,
+                      мы уже не один раз пользовались его услугами. Качеством сервиса полностью довольны, отлично
+                      организовывают отдых. Мне нравится, что можно рассказать о своих предпочтениях и тебе подберут
+                      хороший тур по твоим пожеланиям и сумме. Осталось много положительных эмоций. Спасибо.</p>
+                    <p class="section5__text">Юрий</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <section class="section6" id="form">
+      <div class="container">
+        <div class="section6__body">
+          <div class="section6__title">нет времени на поиск тура?</div>
+          <div class="section6__subtitle">Доверьтесь проффесионалам!</div>
+          <div class="section6__subtitle2">Оставьте заявку и мы подберем Вам подходящий тур в ближайшее время!</div>
+          <form class="section6__origin" action="#">
+            <input id="name" type="text" placeholder="Ваше имя">
+            <input id="phone" type="text" placeholder="Ваш телефон">
+            <input id="subject" type="text" placeholder="Тема сообщения">
+          </form>
+          <form class="section6__origin2" action="#">
+            <textarea name="comment" id="comment" placeholder="Сообщение "></textarea>
+          </form>
+          <div class="section6__button">
+            <button class="section6__butt">Отправить</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" id="contacts">
+    <div id="map"></div>
+    <div class="container">
+      <div class="footer__title">контактная информация</div>
+      <div class="footer__body">
+        <div class="footer__box">
+          <h3>на соборной 76</h3>
+          <p>Тел. +38(0552)58 96 32, +38(0552)58 25 87, +38(095)11 25 97</p>
+          <p>E-mail:travel@morgan.ks.ua</p>
+          <p>Сайт:http://www.morgan.ks.ua</p>
+          <p>Aдресс: 73003, г.Херсон, ул. Соборная 76</p>
+          <p>Время работы:</p>
+          <p>пн-пт: 9:00-17:00, сб: 9:00-14:00, вс: выходной</p>
+        </div>
+        <div class="footer__box">
+          <h3>на ушакова 56</h3>
+          <p>Тел. +38(0552)58 11 32, +38(0552)58 56 87, +38(095)22 25 87</p>
+          <p>E-mail:travel@morgan.ks.ua</p>
+          <p>Сайт:http://www.morgan.ks.ua</p>
+          <p>Aдресс: 73003, г.Херсон, ул. Ушакова 56</p>
+          <p>Время работы:</p>
+          <p>пн-пт: 9:00-17:00, сб: 9:00-14:00, вс: выходной</p>
+        </div>
+      </div>
+      <div class="footer__foot">
+        <h3>мы в соцсетях</h3>
+        <p>Последние новости, горящие туры, подбор пакетных туров, отзывы, авиаперелёты и многое другое!</p>
+        <div class="footer__icon">
+          <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+  <script src="https://kit.fontawesome.com/32a9cae6f7.js" crossorigin="anonymous"></script>
+  <script>
+    let map;
+
+    function initMap() {
+      const uluru = { lat: 46.640, lng: 32.614 };
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: uluru,
+        zoom: 14,
+
+      });
+
+      const marker = new google.maps.Marker({
+        position: uluru,
+        map: map,
+      });
+    }
+  </script>
+<script type="text/javascript" src="bundle.js"></script></body>
+
+</html>
